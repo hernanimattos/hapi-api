@@ -21,6 +21,8 @@ exports.up = (knex, Promise) => knex.schema
     gamesTable.timestamp('created_at').notNullable();
   });
 
-exports.down = function (knex, Promise) {
+exports.down = (knex, Promise) =>
+  knex.schema
+    .dropTableIfExists('users')
+    .dropTableIfExists('games');
 
-};
