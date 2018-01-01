@@ -1,7 +1,7 @@
 
 exports.up = (knex, Promise) => knex.schema
   .createTable('users', (usersTable) => {
-    usersTable.increment();
+    usersTable.increments();
     usersTable.string('login', 100).notNullable().unique();
     usersTable.string('email', 200).notNullable().unique();
     usersTable.string('password', 100).notNullable();
@@ -11,7 +11,7 @@ exports.up = (knex, Promise) => knex.schema
   })
 
   .createTable('games', (gamesTable) => {
-    gamesTable.increment();
+    gamesTable.increments();
     gamesTable.string('owner', 100).references('guid').inTable('users');
     gamesTable.string('name', 250).notNullable();
     gamesTable.string('category', 250).notNullable();
