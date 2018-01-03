@@ -25,7 +25,7 @@ exports.seed = (knex, Promise) =>
         category: 'Action',
         name: 'Need for speed',
         img: '',
-        guid: 'ddb8a136-6df4-4cf3-98c6-d29f6da4fbc6',
+        guid: 'deb8a136-6df4-4cf3-98c6-d29f6da4fbc6',
         age: '22',
         isPublic: false,
       },
