@@ -15,6 +15,7 @@ exports.up = (knex, Promise) => knex.schema
     gamesTable.string('owner', 100).references('guid').inTable('users');
     gamesTable.string('name', 250).notNullable();
     gamesTable.string('category', 250).notNullable();
+    gamesTable.string('guid', 36).notNullable().unique();
     gamesTable.string('img', 250).notNullable();
     gamesTable.string('age', 36).notNullable().unique();
     gamesTable.boolean('isPublic').notNullable().defaultTo(true);

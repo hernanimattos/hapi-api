@@ -4,7 +4,11 @@
   "description": "This README would normally document whatever steps are necessary to get your application up and running.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed" : "knex seed:make --knexfile ./api/knexfile.js",
+    "seed-run": "knex seed:run --knexfile ./api/knexfile.js",
+    "migrate": "knex migrate:make --knexfile ./api/knexfile.js",
+    "migrate-latest": "knex migrate:latest --knexfile ./api/knexfile.js"
   },
   "repository": {
     "type": "git",

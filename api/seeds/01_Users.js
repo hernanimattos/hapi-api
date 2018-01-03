@@ -1,9 +1,7 @@
 
 exports.seed = function (knex, Promise) {
-  // Deletes ALL existing entries
   return knex('users').del()
     .then(() =>
-      // Inserts seed entries
       knex('users').insert([
         {
           id: 1,
@@ -11,8 +9,7 @@ exports.seed = function (knex, Promise) {
           email: 'hernani@email.com',
           password: 123456,
           name: 'Hernani',
-          guid: 1298361374,
-          create_at: new Date(),
+          guid: 'f03ede7c-b121-4112-bcc7-130a3e87988a',
         },
         {
           id: 2,
@@ -20,8 +17,7 @@ exports.seed = function (knex, Promise) {
           email: 'juliana@email.com',
           password: '123456',
           name: 'Juliana',
-          guid: 1298563274,
-          create_at: new Date(),
+          guid: 'f03ede7c-b121-4112-bcc7-130a3e87988b',
         },
         {
           id: 3,
@@ -29,8 +25,7 @@ exports.seed = function (knex, Promise) {
           email: 'luca@email.com',
           password: 123456,
           name: 'Luca',
-          guid: 1298564274,
-          create_at: new Date(),
+          guid: 'f03ede7c-b121-4112-bcc7-130a3e87988c',
         },
       ]));
 };
