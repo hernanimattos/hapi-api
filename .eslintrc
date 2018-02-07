@@ -1,8 +1,7 @@
 {
-  "env": {
-    "es6": true,
-    "browser": true
-  },
-  "extends":"airbnb"
-
+	"eslint.options": {
+		"configFile": "C:/mydirectory/.eslintrc.json"
+	},
+	 "eslint.run": "onSave",
+		"extends": "airbnb-base"
 }

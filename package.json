@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed" : "knex seed:make --knexfile ./api/knexfile.js",
+    "seed": "knex seed:make --knexfile ./api/knexfile.js",
     "seed-run": "knex seed:run --knexfile ./api/knexfile.js",
     "migrate": "knex migrate:make --knexfile ./api/knexfile.js",
     "migrate-latest": "knex migrate:latest --knexfile ./api/knexfile.js"
@@ -20,7 +20,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^4.14.0",
+    "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",

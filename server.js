@@ -1,21 +1,66 @@
 
 
 const Hapi = require('hapi');
+const hapiJwt = require('hapi-auth-jwt');
 
-// Create a server with a host and port
-const server = Hapi.server({
+
+ const server = Hapi.server({
   host: 'localhost',
   port: 8000,
 });
 
-// Add the route
+server.register(require('hapi-auth-jwt'), (err) => {
+	server.auth.strategy('token', 'jwt', {
+
+		key: 'vZiYpmTzqXMp8PpYXKwqc9ShQ1UhyAfy',
+
+		verifyOptions: {
+			algorithms: ['HS256'],
+		}
+
+	});
+
+});
+
 server.route({
   method: 'GET',
-  path: '/{name}',
+  path: '/games',
   handler(request, h) {
-    return `Hello ${encodeURIComponent(request.params.name)}`;
+	return `Hello ${encodeURIComponent(request.params.name)}`;
+	//   const getOperation = Knex('games').where({
+
+	// 	  isPublic: true
+
+	//   }).select('name').then((results) => {
+	// 	  console.log('foi, sim viu')
+
+	// 	  if (!results || results.length === 0) {
+
+	// 		  reply({
+
+	// 			  error: true,
+	// 			  errMessage: 'no public bird found',
+
+	// 		  });
+
+	// 	  }
+	// 		  reply({
+
+	// 			  dataCount: results.length,
+	// 			  data: results,
+
+	// 		  });
+
+	// 	  }).catch((err) => {
+
+	// 		  reply('server-side error');
+
+	// 	  });
+
+
   },
 });
+
 
 // Start the server
 async function start() {
@@ -28,5 +73,7 @@ async function start() {
 
   console.log('Server running at:', server.info.uri);
 }
+
+
 
 start();
